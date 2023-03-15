@@ -5,7 +5,7 @@ PROJECT = SIMPLO_API
 default:
 	composer create-project laravel/laravel API
 	mv API .API
-	rsync -a * .API
+	rsync -I -a * .API
 	mv Makefile .Makefile
 	rm -rf *
 	mv .Makefile Makefile
@@ -14,9 +14,8 @@ default:
 	rm -rf Makefile
 
 
-database:
+prepareDatabase:
 	php artisan migrate:fresh
 
 server:
 	php artisan serve
-		
