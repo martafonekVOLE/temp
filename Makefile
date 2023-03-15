@@ -10,6 +10,7 @@ default:
 	rm -rf *
 	mv .Makefile Makefile
 	mv .API API
+	mv API/README.md .
 	rm -rf Makefile
 
 
@@ -18,4 +19,4 @@ database:
 
 server:
 	php artisan serve
-
+		
